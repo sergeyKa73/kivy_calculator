@@ -14,7 +14,6 @@ from kivy.core.window import Window
 
 Window.size = (300, 300)
 
-
 saveInput = ''
 
 class CalculatorApp(App):
@@ -34,14 +33,15 @@ class CalculatorApp(App):
                 saveInput = self.result.text = ''
 
     def build(self):
-        self.title ='Калькулятор'
+
         root = BoxLayout(orientation='vertical', padding=5)
 
-        self.result = TextInput( text='', readonly= True, font_size = 25, halign='right', size_hint = (1, .3), background_color = (1,1,1,.8))
+        self.result = TextInput(text='', readonly=True, font_size=25, halign='right', size_hint=(1, .3),
+                                background_color=(1, 1, 1, .8))
 
         root.add_widget(self.result)
 
-        gl = GridLayout(cols = 5)
+        gl = GridLayout(cols=5)
 
         gl.add_widget(Button(text='7', on_press=self.calculate))
         gl.add_widget(Button(text='8', on_press=self.calculate))
